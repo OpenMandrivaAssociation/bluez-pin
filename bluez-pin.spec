@@ -11,6 +11,7 @@ License: 	GPLv2+
 Group: 		Communications
 Source0: 	ftp://gpe.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
 
+Buildroot: 	%_tmppath/%name-%version-buildroot
 BuildRequires:	ImageMagick gtk2-devel libglade2.0-devel libGConf2-devel
 BuildRequires:	libbluez-devel
 BuildRequires:  dbus-glib-devel >= 0.50
