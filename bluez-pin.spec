@@ -1,6 +1,6 @@
 %define name 	bluez-pin
 %define version 0.30
-%define release %mkrel 7
+%define release %mkrel 8
 
 Summary: 	Bluetooth PIN GUI
 Name: 		%name
