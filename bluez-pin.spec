@@ -28,7 +28,7 @@ A GTK+ helper app for entering a Bluetooth PIN.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 %find_lang %name
 
@@ -40,7 +40,7 @@ update-alternatives --install /bin/bluepin bluepin /usr/bin/bluez-pin 10
 update-alternatives --remove bluepin /usr/bin/bluez-pin
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %name.lang
 %defattr(-,root,root)
