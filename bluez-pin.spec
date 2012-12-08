@@ -1,20 +1,18 @@
-%define name 	bluez-pin
-%define version 0.30
-%define release %mkrel 12
-
-Summary: 	Bluetooth PIN GUI
-Name: 		%name
-Version: 	%version
-Release: 	%release
-Url: 		http://www.bluez.org/
-License: 	GPLv2+
-Group: 		Communications
+Summary:	Bluetooth PIN GUI
+Name:		bluez-pin
+Version:	0.30
+Release:	15
+License:	GPLv2+
+Group:		Communications
 Source0: 	ftp://gpe.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
+Url:		http://www.bluez.org/
 
-Buildroot: 	%_tmppath/%name-%version-buildroot
-BuildRequires:	imagemagick gtk2-devel libglade2.0-devel libGConf2-devel
-BuildRequires:	libbluez-devel
-BuildRequires:  dbus-glib-devel >= 0.50
+BuildRequires:	imagemagick
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(libglade-2.0)
+BuildRequires:	pkgconfig(gconf-2.0)
+BuildRequires:	pkgconfig(bluez)
+BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	perl-XML-Parser
 
 %description
@@ -28,9 +26,7 @@ A GTK+ helper app for entering a Bluetooth PIN.
 make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-%find_lang %name
 
 %post
 update-alternatives --install /bin/bluepin bluepin /usr/bin/bluez-pin 10
@@ -39,14 +35,16 @@ update-alternatives --install /bin/bluepin bluepin /usr/bin/bluez-pin 10
 [ $1 != 0 ] && exit 0
 update-alternatives --remove bluepin /usr/bin/bluez-pin
 
-%clean
-rm -rf %{buildroot}
-
-%files -f %name.lang
-%defattr(-,root,root)
+%files
 %doc ChangeLog 
-%_bindir/%name
-%config %_sysconfdir/dbus*/*
-%_datadir/pixmaps/*
-%_datadir/%name
+%{_bindir}/%{name}
+%config %{_sysconfdir}/dbus*/*
+%{_datadir}/pixmaps/*
+%{_datadir}/%{name}
 
+
+
+%changelog
+* Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.30-12mdv2011.0
++ Revision: 663327
+- mass rebuild
