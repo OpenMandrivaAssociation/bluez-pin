@@ -1,3 +1,5 @@
+%define _disable_rebuild_configure 1
+
 Summary:	Bluetooth PIN GUI
 Name:		bluez-pin
 Version:	0.30
