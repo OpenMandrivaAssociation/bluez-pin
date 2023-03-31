@@ -3,7 +3,7 @@
 Summary:	Bluetooth PIN GUI
 Name:		bluez-pin
 Version:	0.30
-Release:	24
+Release:	25
 License:	GPLv2+
 Group:		Communications
 Source0: 	ftp://gpe.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
