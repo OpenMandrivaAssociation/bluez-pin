@@ -7,7 +7,7 @@ Release:	25
 License:	GPLv2+
 Group:		Communications
 Source0: 	ftp://gpe.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
-Url:		http://www.bluez.org/
+Url:		https://www.bluez.org/
 
 BuildRequires:	imagemagick
 BuildRequires:	pkgconfig(gtk+-2.0)
