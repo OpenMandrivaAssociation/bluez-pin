@@ -9,6 +9,11 @@ Group:		Communications
 Source0: 	ftp://gpe.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
 Url:		https://www.bluez.org/
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libglade-2.0)
